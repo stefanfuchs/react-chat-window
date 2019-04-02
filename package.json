@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@types/react": "^16.8.10",
-    "awesome-typescript-loader": "^5.2.1",
     "emoji-js": "^3.4.1",
     "nwb": "^0.23.0",
     "react": "^16.8.6",
