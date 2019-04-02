@@ -10,4 +10,4 @@ const MESSAGE_TYPES = {
   },
 };
 
-module.exports = MESSAGE_TYPES;
+export default MESSAGE_TYPES 

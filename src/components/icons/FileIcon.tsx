@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import * as React from 'react'
 
-class FileIcon extends Component {
+class FileIcon extends React.Component<Props> {
 
   _handleClick(e) {
     e.preventDefault();
@@ -41,6 +41,12 @@ class FileIcon extends Component {
     </button>
     );
   }
+}
+
+export interface Props {
+  onFocus?:  (event: any) => void
+  onBlur?: (event: any) => void
+  onClick?: (event: any) => void
 }
 
 export default FileIcon;

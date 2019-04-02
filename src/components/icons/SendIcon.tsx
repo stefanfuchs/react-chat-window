@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import * as React from 'react'
 
-class SendIcon extends Component {
+class SendIcon extends React.Component<Props> {
 
   render() {
     return (
@@ -30,6 +30,12 @@ class SendIcon extends Component {
     </button>
     );
   }
+}
+
+export interface Props {
+  onFocus?:  (event: any) => void
+  onBlur?: (event: any) => void
+  onClick?: (event: any) => void
 }
 
 export default SendIcon;
