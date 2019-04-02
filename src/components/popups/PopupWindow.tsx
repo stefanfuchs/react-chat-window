@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 
 
-class PopupWindow extends Component {
+class PopupWindow extends React.Component<Props> {
+  scLauncher: any
+  emojiPopup: any
 
   componentDidMount() {
     this.scLauncher = document.querySelector('#sc-launcher');
@@ -33,6 +35,12 @@ class PopupWindow extends Component {
       </div>
     )
   }
+}
+
+export interface Props {
+  isOpen: boolean
+  onClickedOutside: (event: any) => void
+  onInputChange: (event: any) => void
 }
 
 export default PopupWindow;

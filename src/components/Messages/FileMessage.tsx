@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import FileIcon from './../icons/FileIcon'
+import * as React from 'react'
+import FileIcon from '../icons/FileIcon'
 
 
 const FileMessage = (props) => {

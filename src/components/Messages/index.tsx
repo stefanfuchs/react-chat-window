@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import TextMessage from './TextMessage'
 import EmojiMessage from './EmojiMessage'
 import FileMessage from './FileMessage'
 import chatIconUrl from './../../assets/chat-icon.svg'
 
 
-class Message extends Component {
+class Message extends React.Component<Props> {
 
   _renderMessageOfType(type) {
     switch(type) {
@@ -17,6 +17,7 @@ class Message extends Component {
         return <FileMessage {...this.props.message} />
       default:
         console.error(`Attempting to load message with unsupported file type '${type}'`)
+        return <div></div>
     }
   }
 
@@ -35,6 +36,10 @@ class Message extends Component {
         </div>
       </div>)
   }
+}
+
+export interface Props {
+  message: any
 }
 
 export default Message

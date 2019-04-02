@@ -1,14 +1,18 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import * as React from 'react';
 import ChatWindow from './ChatWindow';
 import launcherIcon from './../assets/logo-no-bg.svg';
 import incomingMessageSound from './../assets/sounds/notification.mp3';
 import launcherIconActive from './../assets/close-icon.png';
 
-class Launcher extends Component {
+class Launcher extends React.Component<Props, State> {
 
-  constructor() {
-    super();
+  public static defaultProps = {
+    newMessagesCount: 0,
+    showEmoji: true
+  }
+
+  constructor(props) {
+    super(props);
     this.state = {
       launcherIcon,
       isOpen: false
@@ -75,20 +79,27 @@ const MessageCount = (props) => {
   )
 }
 
-Launcher.propTypes = {
-  onMessageWasReceived: PropTypes.func,
-  onMessageWasSent: PropTypes.func,
-  newMessagesCount: PropTypes.number,
-  isOpen: PropTypes.bool,
-  handleClick: PropTypes.func,
-  messageList: PropTypes.arrayOf(PropTypes.object),
-  mute: PropTypes.bool,
-  showEmoji: PropTypes.bool,
-};
-
-Launcher.defaultProps = {
-  newMessagesCount: 0,
-  showEmoji: true
+export interface Props {
+  onMessageWasReceived?: (...args: any) => any,
+  onMessageWasSent?: (...args: any) => any,
+  onFilesSelected?: (...args: any) => any,
+  agentProfile?: any,
+  newMessagesCount?: number,
+  isOpen?: boolean,
+  handleClick?: (...args: any) => any,
+  messageList?: object[],
+  mute?: boolean,
+  showEmoji?: boolean,
 }
+
+export interface State {
+  launcherIcon: string
+  isOpen: boolean
+}
+
+// Launcher.defaultProps = {
+//   newMessagesCount: 0,
+//   showEmoji: true
+// }
 
 export default Launcher;

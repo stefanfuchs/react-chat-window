@@ -1,13 +1,23 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import Message from './Messages'
 
-class MessageList extends Component {
+interface Props {
+  messages: any[]
+  // imageUrl: string
+}
+
+class MessageList extends React.Component<Props> {
+  scrollList: any
+
+  constructor(props: Props) {
+    super(props);
+  }
 
   componentDidUpdate(prevProps, prevState) {
     this.scrollList.scrollTop = this.scrollList.scrollHeight;
   }
 
-  render () {
+  render() {
     return (
       <div className="sc-message-list" ref={el => this.scrollList = el}>
         {this.props.messages.map((message, i) => {

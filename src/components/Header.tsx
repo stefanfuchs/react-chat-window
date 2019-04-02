@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import closeIcon from './../assets/close-icon.png';
 
 
-class Header extends Component {
+class Header extends React.Component<Props> {
 
   render() {
     return (
@@ -15,6 +15,12 @@ class Header extends Component {
       </div>
     );
   }
+}
+
+interface Props {
+  imageUrl: string
+  teamName: string
+  onClose: (event: any) => void
 }
 
 export default Header;

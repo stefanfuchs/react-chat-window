@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import * as React from 'react';
 import SendIcon from './icons/SendIcon';
 import FileIcon from './icons/FileIcon';
 import EmojiIcon from './icons/EmojiIcon';
@@ -7,10 +6,13 @@ import PopupWindow from './popups/PopupWindow';
 import EmojiPicker from './emoji-picker/EmojiPicker';
 
 
-class UserInput extends Component {
+class UserInput extends React.Component<Props, any> {
+  emojiPickerButton: any
+  _fileUploadButton: any
+  userInput: any
 
-  constructor() {
-    super();
+  constructor(props: Props) {
+    super(props);
     this.state = {
       inputActive: false,
       inputHasText: false,
@@ -20,7 +22,7 @@ class UserInput extends Component {
   }
 
   componentDidMount() {
-    this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button'); 
+    this.emojiPickerButton = document.querySelector('#sc-emoji-picker-button');
   }
 
   handleKeyDown(event) {
@@ -75,7 +77,7 @@ class UserInput extends Component {
 
   _handleEmojiPicked = (emoji) => {
     this.setState({ emojiPickerIsOpen: false });
-    if(this.state.inputHasText) {
+    if (this.state.inputHasText) {
       this.userInput.innerHTML += emoji;
     } else {
       this.props.onSubmit({
@@ -132,13 +134,13 @@ class UserInput extends Component {
       <form className={`sc-user-input ${(inputActive ? 'active' : '')}`}>
         <div
           role="button"
-          tabIndex="0"
+          tabIndex={0}
           onFocus={() => { this.setState({ inputActive: true }); }}
           onBlur={() => { this.setState({ inputActive: false }); }}
           ref={(e) => { this.userInput = e; }}
           onKeyDown={this.handleKeyDown.bind(this)}
           onKeyUp={this.handleKeyUp.bind(this)}
-          contentEditable="true"
+          contentEditable={true}
           placeholder="Write a reply..."
           className="sc-user-input--text"
         >
@@ -159,10 +161,10 @@ class UserInput extends Component {
   }
 }
 
-UserInput.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  onFilesSelected: PropTypes.func.isRequired,
-  showEmoji: PropTypes.bool
+interface Props {
+  onSubmit: (...args: any) => any,
+  onFilesSelected: (...args: any) => any,
+  showEmoji?: boolean
 };
 
 export default UserInput;

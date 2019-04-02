@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import * as React from 'react'
 import EmojiConvertor from 'emoji-js';
 import emojiData from './emojiData';
 
