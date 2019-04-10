@@ -60,7 +60,7 @@ class Launcher extends React.Component<Props, State> {
         <ChatWindow
           messageList={this.props.messageList}
           onUserInputSubmit={this.props.onMessageWasSent}
-          onFilesSelected={this.props.onFilesSelected}
+          // onFilesSelected={this.props.onFilesSelected}
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
@@ -83,7 +83,7 @@ const MessageCount = (props: { count: number, isOpen: boolean }) => {
 export interface Props {
   onMessageWasReceived?: (...args: any) => any,
   onMessageWasSent?: (...args: any) => any,
-  onFilesSelected?: (...args: any) => any,
+  // onFilesSelected?: (...args: any) => any,
   agentProfile?: any,
   newMessagesCount?: number,
   isOpen?: boolean,

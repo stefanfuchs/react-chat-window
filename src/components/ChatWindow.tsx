@@ -13,9 +13,9 @@ class ChatWindow extends React.Component<Props> {
     this.props.onUserInputSubmit(message);
   }
 
-  onFilesSelected(filesList) {
-    this.props.onFilesSelected(filesList);
-  }
+  // onFilesSelected(filesList) {
+  //   this.props.onFilesSelected(filesList);
+  // }
 
   render() {
     let messageList = this.props.messageList || [];
@@ -48,7 +48,7 @@ interface Props {
   agentProfile: any,
   isOpen: boolean,
   onClose: (event: any) => void,
-  onFilesSelected?: (event: any) => void,
+  // onFilesSelected?: (event: any) => void,
   onUserInputSubmit: (event: any) => void,
   showEmoji: boolean
   messageList: any[]
