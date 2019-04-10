@@ -3,6 +3,7 @@ import ChatWindow from './ChatWindow';
 import launcherIcon from './../assets/logo-no-bg.svg';
 import incomingMessageSound from './../assets/sounds/notification.mp3';
 import launcherIconActive from './../assets/close-icon.png';
+import { MessageInterface } from './Messages';
 
 class Launcher extends React.Component<Props, State> {
 
@@ -22,7 +23,7 @@ class Launcher extends React.Component<Props, State> {
   componentWillReceiveProps(nextProps: Props) {
     if (this.props.mute) { return; }
     const nextMessage = nextProps.messageList[nextProps.messageList.length - 1];
-    const isIncoming = (nextMessage || {}).author === 'them';
+    const isIncoming = nextMessage ? nextMessage.author === 'them' : false;
     const isNew = nextProps.messageList.length > this.props.messageList.length;
     if (isIncoming && isNew) {
       this.playIncomingMessageSound()
@@ -70,7 +71,7 @@ class Launcher extends React.Component<Props, State> {
   }
 }
 
-const MessageCount = (props) => {
+const MessageCount = (props: { count: number, isOpen: boolean }) => {
   if (props.count === 0 || props.isOpen === true) { return null }
   return (
     <div className={"sc-new-messages-count"}>
@@ -87,7 +88,7 @@ export interface Props {
   newMessagesCount?: number,
   isOpen?: boolean,
   handleClick?: (...args: any) => any,
-  messageList?: any[],
+  messageList?: MessageInterface[],
   mute?: boolean,
   showEmoji?: boolean,
 }

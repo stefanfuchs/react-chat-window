@@ -5,13 +5,13 @@ import TextMessage from './TextMessage'
 import chatIconUrl from './../../assets/chat-icon.svg'
 import { Message as ChatProtocolMessage } from '@stefancfuchs/chat-message-protocol'
 
-export interface MessageInterface {
-  type: ChatProtocolMessage
+export interface MessageInterface extends ChatProtocolMessage {
+  author: 'me' | 'them'
 }
 
 class Message extends React.Component<Props> {
 
-  _renderMessageOfType(type) {
+  _renderMessageOfType(type: MessageInterface["type"]) {
     switch (type) {
       case 'text':
         return <TextMessage {...this.props.message} />
@@ -43,7 +43,7 @@ class Message extends React.Component<Props> {
 }
 
 export interface Props {
-  message: any
+  message: MessageInterface
 }
 
 export default Message
