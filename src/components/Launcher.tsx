@@ -64,7 +64,7 @@ class Launcher extends React.Component<Props, State> {
           agentProfile={this.props.agentProfile}
           isOpen={isOpen}
           onClose={this.handleClick.bind(this)}
-          showEmoji={this.props.showEmoji}
+          // showEmoji={this.props.showEmoji}
         />
       </div>
     );

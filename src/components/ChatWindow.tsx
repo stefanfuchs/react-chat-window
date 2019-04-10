@@ -50,7 +50,7 @@ interface Props {
   onClose: (event: any) => void,
   // onFilesSelected?: (event: any) => void,
   onUserInputSubmit: (event: any) => void,
-  showEmoji: boolean
+  // showEmoji: boolean
   messageList: any[]
 }
 
