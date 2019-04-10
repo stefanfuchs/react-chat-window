@@ -36,8 +36,8 @@ class ChatWindow extends React.Component<Props> {
         />
         <UserInput
           onSubmit={this.onUserInputSubmit.bind(this)}
-          onFilesSelected={this.onFilesSelected.bind(this)}
-          showEmoji={this.props.showEmoji}
+          // onFilesSelected={this.onFilesSelected.bind(this)}
+          // showEmoji={this.props.showEmoji}
         />
       </div>
     );

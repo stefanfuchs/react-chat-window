@@ -11,7 +11,7 @@ class Launcher extends React.Component<Props, State> {
     showEmoji: true
   }
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       launcherIcon,
@@ -19,7 +19,7 @@ class Launcher extends React.Component<Props, State> {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Props) {
     if (this.props.mute) { return; }
     const nextMessage = nextProps.messageList[nextProps.messageList.length - 1];
     const isIncoming = (nextMessage || {}).author === 'them';
@@ -87,7 +87,7 @@ export interface Props {
   newMessagesCount?: number,
   isOpen?: boolean,
   handleClick?: (...args: any) => any,
-  messageList?: object[],
+  messageList?: any[],
   mute?: boolean,
   showEmoji?: boolean,
 }
