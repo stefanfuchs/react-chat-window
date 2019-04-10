@@ -81,8 +81,8 @@ const MessageCount = (props: { count: number, isOpen: boolean }) => {
 }
 
 export interface Props {
-  onMessageWasReceived?: (...args: any) => any,
-  onMessageWasSent?: (...args: any) => any,
+  // onMessageWasReceived?: (...args: any) => any,
+  onMessageWasSent?: (message: MessageInterface) => void,
   // onFilesSelected?: (...args: any) => any,
   agentProfile?: any,
   newMessagesCount?: number,

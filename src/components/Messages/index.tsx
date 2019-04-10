@@ -2,7 +2,8 @@ import * as React from 'react'
 import TextMessage from './TextMessage'
 // import EmojiMessage from './EmojiMessage'
 // import FileMessage from './FileMessage'
-import chatIconUrl from './../../assets/chat-icon.svg'
+// import chatIconUrl from './../../assets/chat-icon.svg'
+import chatIconUrl from './../../assets/Avatar_fly.png.webp'
 import { Message as ChatProtocolMessage } from '@stefancfuchs/chat-message-protocol'
 
 export interface MessageInterface extends ChatProtocolMessage {

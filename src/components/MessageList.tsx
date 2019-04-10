@@ -1,19 +1,19 @@
 import * as React from 'react';
-import Message from './Messages'
+import Message, { MessageInterface } from './Messages'
 
 interface Props {
-  messages: any[]
+  messages: MessageInterface[]
   // imageUrl: string
 }
 
 class MessageList extends React.Component<Props> {
-  scrollList: any
+  scrollList: HTMLDivElement
 
   constructor(props: Props) {
     super(props);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Props, prevState: any) {
     this.scrollList.scrollTop = this.scrollList.scrollHeight;
   }
 
