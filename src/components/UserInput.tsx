@@ -3,6 +3,8 @@ import SendIcon from './icons/SendIcon';
 // import FileIcon from './icons/FileIcon';
 // import EmojiIcon from './icons/EmojiIcon';
 import PopupWindow from './popups/PopupWindow';
+import { MessageType } from '@stefancfuchs/chat-message-protocol';
+import { MessageInterface } from 'es/components/Messages';
 // import EmojiPicker from './emoji-picker/EmojiPicker';
 
 
@@ -62,8 +64,8 @@ class UserInput extends React.Component<Props, any> {
     if (text && text.length > 0) {
       this.props.onSubmit({
         author: 'me',
-        type: 'text',
-        data: { text }
+        type: MessageType.TEXT,
+        content: text
       });
       this.userInput.innerHTML = '';
     }
@@ -162,7 +164,7 @@ class UserInput extends React.Component<Props, any> {
 }
 
 interface Props {
-  onSubmit: (...args: any) => any,
+  onSubmit: (message: MessageInterface) => void,
   // onFilesSelected: (...args: any) => any,
   // showEmoji?: boolean
 };
