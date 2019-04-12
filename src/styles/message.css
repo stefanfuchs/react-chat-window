@@ -55,6 +55,36 @@
   margin-right: 40px;
 }
 
+.sc-message--image {
+  padding: 17px 20px;
+  border-radius: 6px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  -webkit-font-smoothing: subpixel-antialiased;
+  word-wrap: break-word;
+  width: calc(100% - 90px);
+}
+
+.sc-message--content.sent .sc-message--image {
+  color: white;
+  background-color: #4e8cff;
+  max-width: calc(100% - 120px);
+  word-wrap: break-word;
+}
+
+.sc-message--content.received .sc-message--image {
+  color: #263238;
+  background-color: #f4f7f9;
+  margin-right: 40px;
+}
+
+.sc-message--image img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
 .sc-message--emoji {
   font-size: 40px;
 }

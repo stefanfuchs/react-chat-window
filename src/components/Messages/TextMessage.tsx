@@ -10,7 +10,7 @@ const TextMessage = (props: Props) => {
 }
 
 export interface Props extends MessageInterface {
-  content: string
+  // content: string
 }
 
 export default TextMessage

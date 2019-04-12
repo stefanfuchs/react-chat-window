@@ -143,7 +143,7 @@ class UserInput extends React.Component<Props, any> {
           onKeyDown={this.handleKeyDown.bind(this)}
           onKeyUp={this.handleKeyUp.bind(this)}
           contentEditable={true}
-          placeholder="Write a reply..."
+          placeholder="Escreva uma mensagem..."
           className="sc-user-input--text"
         >
         </div>

@@ -20,7 +20,7 @@ class Demo extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      messageList: messageHistory,
+      messageList: [],
       newMessagesCount: 0,
       isOpen: false
     };

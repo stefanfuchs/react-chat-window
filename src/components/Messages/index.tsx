@@ -4,7 +4,8 @@ import TextMessage from './TextMessage'
 // import FileMessage from './FileMessage'
 // import chatIconUrl from './../../assets/chat-icon.svg'
 import chatIconUrl from './../../assets/Avatar_fly.png.webp'
-import { Message as ChatProtocolMessage } from '@stefancfuchs/chat-message-protocol'
+import { Message as ChatProtocolMessage, MessageType } from '@stefancfuchs/chat-message-protocol'
+import ImageMessage from './ImageMessage';
 
 export interface MessageInterface extends ChatProtocolMessage {
   author: 'me' | 'them'
@@ -14,8 +15,10 @@ class Message extends React.Component<Props> {
 
   _renderMessageOfType(type: MessageInterface["type"]) {
     switch (type) {
-      case 'text':
+      case MessageType.TEXT:
         return <TextMessage {...this.props.message} />
+      case MessageType.IMAGE:
+        return <ImageMessage {...this.props.message} />
       // case 'emoji':
       // return <EmojiMessage {...this.props.message} />
       // case 'file':
