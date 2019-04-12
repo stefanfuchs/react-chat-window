@@ -6,6 +6,7 @@ import TestArea from './TestArea';
 import Header from './Header';
 import Footer from './Footer';
 import monsterImgUrl from "../assets/monster.png";
+import fireflyLogo from "../assets/images/firefly_logo_horizontal.png.webp";
 // import Highlight from "react-highlight.js";
 import '../assets/styles'
 import { MessageInterface } from 'src/components/Messages';
@@ -95,8 +96,9 @@ class Demo extends React.Component<Props, State> {
       />
       <Launcher
         agentProfile={{
-          teamName: 'react-chat-window',
-          imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
+          // teamName: 'react-chat-window',
+          // imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
+          imageUrl: fireflyLogo
         }}
         onMessageWasSent={this.handleMessageWasSent}
         // onFilesSelected={this._onFilesSelected.bind(this)}

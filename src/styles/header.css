@@ -1,6 +1,8 @@
 .sc-header {
-  background: #4e8cff;
-  min-height: 75px;
+  /* background: #4e8cff; */
+  background: #d1f6ff;
+  background: linear-gradient(to right, rgb(219, 243, 252) 0%, rgb(218, 248, 255) 150px, rgb(17, 181, 222) 90%, rgb(17, 181, 222) 100%);
+  min-height: 65px;
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
   color: white;
@@ -12,9 +14,10 @@
 }
 
 .sc-header--img {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   align-self: center;
   padding: 10px;
+  height: 40px;
 }
 
 .sc-header--team-name {
@@ -36,7 +39,7 @@
 }
 
 .sc-header--close-button:hover {
-  background: #4882ed;
+  background: #78cde2;
 }
 
 .sc-header--close-button img {

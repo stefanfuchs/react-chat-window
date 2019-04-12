@@ -10,6 +10,15 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+a {
+  color: #007db5;
+  /* color: #4e8cff; */
+}
+
+a:visited {
+  color: #007db5;
+}
+
 .demo-description {
   max-width: 500px;
 }

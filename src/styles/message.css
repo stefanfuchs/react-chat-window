@@ -44,7 +44,8 @@
 
 .sc-message--content.sent .sc-message--text {
   color: white;
-  background-color: #4e8cff;
+  /* background-color: #4e8cff; */
+  background-color: #11b5de;
   max-width: calc(100% - 120px);
   word-wrap: break-word;
 }
@@ -69,7 +70,7 @@
 
 .sc-message--content.sent .sc-message--image {
   color: white;
-  background-color: #4e8cff;
+  background-color: #11b5de;
   max-width: calc(100% - 120px);
   word-wrap: break-word;
 }
